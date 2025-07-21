@@ -1,0 +1,385 @@
+{
+    "className": "org.joget.apps.userview.model.Userview",
+    "categories": [
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [{
+                "className": "org.joget.apps.userview.lib.HtmlPage",
+                "properties": {
+                    "userviewCacheDuration": "",
+                    "userviewCacheScope": "",
+                    "id": "3B6F25A638EF40FFAD3C5DAAC41BA98F",
+                    "label": "Documentation",
+                    "enableOffline": "",
+                    "customId": "h",
+                    "content": "<p><span style=\"font-size: 24px;\"><strong>#envVariable.AppName#<\/strong><\/span><\/p>\n<p>&nbsp;<\/p>\n<p>This is a Joget Workflow tutorial app to demonstrate the use of process deadlines. These processes includes <a href=\"smtp\" target=\"_blank\" rel=\"noopener\">email notifications<\/a>.<\/p>\n<p>Process deadlines can be used for escalation or to execute repetitive tasks <span>when a specified duration has elapsed<\/span>.<\/p>\n<p>You can learn how to build your own process deadlines from actual working examples in this app.<\/p>\n<p>This app was designed for Joget Workflow Enterprise v5+.<\/p>\n<p>Do also read the official Joget Workflow <a href=\"https://dev.joget.org/community/display/KBv5/Deadlines+and+Escalations\" target=\"_blank\" rel=\"noopener\">Knowledge Base documentation<\/a>&nbsp;on&nbsp;process deadlines.<\/p>\n<p>&nbsp;<\/p>\n<p>The tutorial app demonstrates four types of deadlines, as follows:<\/p>\n<table border=\"1\" cellpadding=\"3\" cellspacing=\"1\" style=\"vertical-align: top; border: 1px solid #7c7c7e;\">\n<tbody>\n<tr>\n<td width=\"15%\"><strong>Deadlines<\/strong><\/td>\n<td width=\"59%\"><strong>Description<\/strong><\/td>\n<td width=\"10%\"><strong>Run<\/strong><\/td>\n<td width=\"14%\"><strong>View<\/strong><\/td>\n<\/tr>\n<tr>\n<td>Process Deadline with Escalation (Asynchronous)<\/td>\n<td>\n<p>Deadline with Asynchronous Escalation illustrate a process design where, on the trigger of the deadline timer, the next activity 2, will be executed at the same time that Activity 1 is still waiting for approval. Activity 1 task is still pending. The List Inbox will display both Activity 1 and Activity 2 tasks.<\/p>\n<p><\/p>\n<\/td>\n<td><a href=\"sea\">Run Process<\/a><\/td>\n<td><a href=\"/jw/web/console/app/jtdeadline/1/processes/process2\" target=\"_blank\" rel=\"noopener\">View Process Diagram<\/a><\/td>\n<\/tr>\n<tr>\n<td>Process&nbsp;Deadline with Escalation (Synchronous)<\/td>\n<td>\n<p>Deadline with Synchronous Escalations illustrate a process design where, on the trigger of the deadline timer, Activity 1 will no longer be active when the escalation to Activity 2 is triggered. Activity 1 task will be aborted and closed. The List Inbox will only display the task for Activity 2.<\/p>\n<p><\/p>\n<\/td>\n<td><a href=\"ses\">Run Process<\/a><\/td>\n<td><a href=\"/jw/web/console/app/jtdeadline/1/processes/process1\" target=\"_blank\" rel=\"noopener\">View Process Diagram<\/a><\/td>\n<\/tr>\n<tr>\n<td>Process&nbsp;Deadline with&nbsp;Repetition (Synchronous)<\/td>\n<td>\n<p>Deadline with Repetition illustrate a process design where, on the trigger of the deadline timer, the process sends an email notification reminder up to a maximum of 3 repetitions. A counter workflow variable is used to track the repetition. In this example, the pending task is aborted after the third repetition. Finally the List Inbox will display zero tasks.<\/p>\n<p><\/p>\n<\/td>\n<td><a href=\"spwrd\">Run Process<\/a><\/td>\n<td><a href=\"/jw/web/console/app/jtdeadline/1/processes/process4\" target=\"_blank\" rel=\"noopener\">View Process Diagram<\/a><\/td>\n<\/tr>\n<tr>\n<td>Process&nbsp;Deadline with Two Deadlines (Asynchronous)<\/td>\n<td>\n<p>Process deadline with two deadlines illustrate a process design where, on the trigger of the first deadline timer (Activity 1), the process escalates the task to Activity 2. Because it is an asynchronous timer, Activity 1 is still pending. On the trigger of the second deadline timer (Activity 2), the process aborts both pending activities and ends the process flow. In this example, the List Inbox will finally display zero tasks.<\/p>\n<p><\/p>\n<\/td>\n<td><a href=\"seawd\">Run Process<\/a><\/td>\n<td><a href=\"/jw/web/console/app/jtdeadline/1/processes/process3\" target=\"_blank\" rel=\"noopener\">View Process Diagram<\/a><\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<p><\/p>\n<p>&nbsp;<\/p>\n<p><span style=\"color: red; font-weight: bold;\">Important Prerequisite:<\/span><\/p>\n<p>1. Setup your Email SMTP in&nbsp;<a href=\"smtp\" target=\"_blank\" rel=\"noopener\">this form<\/a>&nbsp;so that you will receive the test email notifications from deadline processes.<\/p>\n<p>2. Remember to set a value of '<b>30<\/b>' in the Process Deadline Checker Interval value in <a href=\"/jw/web/console/setting/general\">System Settings<\/a>.<\/p>"
+                }
+            }],
+            "properties": {
+                "id": "category-EE74E4F4426241BD9BC3BC73B1D24AC7",
+                "label": "<i class='icon-home'><\/i> Home"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [
+                {
+                    "className": "org.joget.plugin.enterprise.DataListInboxMenu",
+                    "properties": {
+                        "appFilter": "process",
+                        "list-customFooter": "<br/><br/>\nRead <a style=\"color:blue;\" href=\"https://dev.joget.org/community/display/KBv5/Deadlines+and+Escalations\" target=\"_blank\">Joget KB<\/a>",
+                        "assignment-customHeader": "",
+                        "keyName": "",
+                        "assignment-customFooter": "",
+                        "label": "List Inbox",
+                        "customId": "i2",
+                        "datalistId": "EscalationSync",
+                        "showDetail": "true",
+                        "processId": "process2",
+                        "id": "4D703212366349BF9D50FA6B9386DA47",
+                        "rowCount": "true",
+                        "list-customHeader": "<h1>Process Deadline with Escalation (Asynchronous)<\/h1>\r\nDeadline with Asynchronous Escalation illustrate a process design where, on the trigger of the deadline timer, the next activity 2, will be executed at the same time that Activity 1 is still waiting for approval. Activity 1 task is still pending. The List Inbox will display both Activity 1 and Activity 2 tasks.\r\n<br/>\r\nDo not click on the pending task and refresh this inbox frequently to view deadline working.\r\n<br/><br/>"
+                    }
+                },
+                {
+                    "className": "org.joget.apps.userview.lib.RunProcess",
+                    "properties": {
+                        "runProcessDirectly": "Yes",
+                        "fieldPassoverMethod": "append",
+                        "keyName": "",
+                        "label": "Run Process",
+                        "paramName": "",
+                        "customId": "sea",
+                        "messageShowAfterComplete": "",
+                        "showInPopupDialog": "",
+                        "runProcessSubmitLabel": "Start Process",
+                        "id": "9D0D37EB171949B1A202AA420EF0DD9C",
+                        "processDefId": "process2",
+                        "redirectUrlAfterComplete": "i2",
+                        "fieldPassover": ""
+                    }
+                }
+            ],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-4CF782FF11654BB2820A988E9CBAA4F5",
+                "label": "<i class=\"icon-time\"><\/i> Process Deadline with Escalation (Asynchronous)"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [
+                {
+                    "className": "org.joget.plugin.enterprise.DataListInboxMenu",
+                    "properties": {
+                        "appFilter": "process",
+                        "list-customFooter": "<br/><br/>\nRead <a style=\"color:blue;\" href=\"https://dev.joget.org/community/display/KBv5/Deadlines+and+Escalations\" target=\"_blank\">Joget KB<\/a>",
+                        "assignment-customHeader": "",
+                        "keyName": "",
+                        "assignment-customFooter": "",
+                        "label": "List Inbox",
+                        "customId": "i1",
+                        "datalistId": "EscalationSync",
+                        "showDetail": "true",
+                        "processId": "process1",
+                        "id": "5C055B1C95754048992000768976F7F9",
+                        "rowCount": "true",
+                        "list-customHeader": "<h1>Process Deadline with Escalation (Synchronous)<\/h1>\r\nDeadline with Synchronous Escalations illustrate a process design where, on the trigger of the deadline timer, Activity 1 will no longer be active when the escalation to Activity 2 is triggered. Activity 1 task will be aborted and closed. The List Inbox will only display the task for Activity 2.\r\n<br/>\r\nDo not click on the pending task and refresh this inbox frequently to view deadline working.\r\n<br/><br/>"
+                    }
+                },
+                {
+                    "className": "org.joget.apps.userview.lib.RunProcess",
+                    "properties": {
+                        "runProcessDirectly": "Yes",
+                        "fieldPassoverMethod": "append",
+                        "keyName": "",
+                        "label": "Start Process",
+                        "paramName": "",
+                        "customId": "ses",
+                        "messageShowAfterComplete": "",
+                        "showInPopupDialog": "",
+                        "runProcessSubmitLabel": "Start Process",
+                        "id": "3D21A7B2937E463DAEC0C13AFF223E2A",
+                        "processDefId": "process1",
+                        "redirectUrlAfterComplete": "i1",
+                        "fieldPassover": ""
+                    }
+                }
+            ],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-C427873FDF6C4FD6A48C26097301108E",
+                "label": "<i class=\"icon-time\"><\/i> Process Deadline with Escalation (Synchronous)"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [
+                {
+                    "className": "org.joget.plugin.enterprise.DataListInboxMenu",
+                    "properties": {
+                        "appFilter": "process",
+                        "list-customFooter": "<br/><br/>\nRead <a style=\"color:blue;\" href=\"https://dev.joget.org/community/display/KBv5/Deadlines+and+Escalations\" target=\"_blank\">Joget KB<\/a>",
+                        "assignment-customHeader": "",
+                        "keyName": "",
+                        "assignment-customFooter": "",
+                        "label": "List Inbox",
+                        "customId": "i4",
+                        "datalistId": "EscalationSync",
+                        "showDetail": "true",
+                        "processId": "process4",
+                        "id": "3024BFFE646E4AC9A848C608CD0984CB",
+                        "rowCount": "true",
+                        "list-customHeader": "<h1>Process Deadline with Repetition (Synchronous)<\/h1>\r\nDeadline with Repetition illustrate a process design where, on the trigger of the deadline timer, the process sends an email notification reminder up to a maximum of 3 repetitions. A counter workflow variable is used to track the repetition. In this example, the pending task is aborted after the third repetition. Finally the List Inbox will display zero tasks.\r\n<br/>\r\nDo not click on the pending task and refresh this inbox frequently to view deadline working. Check your email inbox too.\r\n<br/><br/>"
+                    }
+                },
+                {
+                    "className": "org.joget.apps.userview.lib.RunProcess",
+                    "properties": {
+                        "runProcessDirectly": "Yes",
+                        "fieldPassoverMethod": "append",
+                        "keyName": "",
+                        "label": "Run Process",
+                        "paramName": "",
+                        "customId": "spwrd",
+                        "messageShowAfterComplete": "",
+                        "showInPopupDialog": "",
+                        "runProcessSubmitLabel": "Start Process",
+                        "id": "74F994062FB445FE86A035D9D916684E",
+                        "processDefId": "process4",
+                        "redirectUrlAfterComplete": "i4",
+                        "fieldPassover": ""
+                    }
+                }
+            ],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-10829381B6AA4B9682E5393F7A1C8767",
+                "label": "<i class=\"icon-time\"><\/i> Process Deadline with Repetition (Synchronous)"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [
+                {
+                    "className": "org.joget.plugin.enterprise.DataListInboxMenu",
+                    "properties": {
+                        "appFilter": "process",
+                        "list-customFooter": "<br/><br/>\nRead <a style=\"color:blue;\" href=\"https://dev.joget.org/community/display/KBv5/Deadlines+and+Escalations\" target=\"_blank\">Joget KB<\/a>",
+                        "assignment-customHeader": "",
+                        "keyName": "",
+                        "assignment-customFooter": "",
+                        "label": "List Inbox",
+                        "customId": "i3",
+                        "datalistId": "EscalationSync",
+                        "showDetail": "true",
+                        "processId": "process3",
+                        "id": "F0823E85F4CE4D3B9FD46F2E70F9A22E",
+                        "rowCount": "true",
+                        "list-customHeader": "<h1>Process Deadline with Two Deadlines (Asynchronous)<\/h1>\r\nProcess deadline with two deadlines illustrate a process design where, on the trigger of the first deadline timer (Activity 1), the process escalates the task to Activity 2. Because it is an asynchronous timer, Activity 1 is still pending. On the trigger of the second deadline timer (Activity 2), the process aborts both pending activities and ends the process flow. In this example, the List Inbox will finally display zero tasks.\r\n<br/>\r\nDo not click on the pending task and refresh this inbox frequently to view deadline working.\r\n<br/><br/>"
+                    }
+                },
+                {
+                    "className": "org.joget.apps.userview.lib.RunProcess",
+                    "properties": {
+                        "runProcessDirectly": "Yes",
+                        "fieldPassoverMethod": "append",
+                        "keyName": "",
+                        "label": "Run Process",
+                        "paramName": "",
+                        "customId": "seawd",
+                        "messageShowAfterComplete": "",
+                        "showInPopupDialog": "",
+                        "runProcessSubmitLabel": "Start Process",
+                        "id": "A483436090324A08A526E078503691F6",
+                        "processDefId": "process3",
+                        "redirectUrlAfterComplete": "i3",
+                        "fieldPassover": ""
+                    }
+                }
+            ],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-C6A7E0A44FC64D538A5F59731D373C10",
+                "label": "<i class=\"icon-time\"><\/i> Process Deadline with Two Deadlines (Asynchronous)"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [{
+                "className": "org.joget.plugin.enterprise.UniversalInboxMenu",
+                "properties": {
+                    "list-customFooter": "",
+                    "assignment-customHeader": "",
+                    "assignment-customFooter": "",
+                    "id": "5117F8F682264A93A89CF1AEA23364F8",
+                    "label": "<i class=\"icon-time\"><\/i> Universal Inbox",
+                    "rowCount": "true",
+                    "customId": "ui",
+                    "buttonPosition": "topLeft",
+                    "list-customHeader": "<h1>Universal Inbox Encompassing All Processes<\/h1>"
+                }
+            }],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-E8EEC9D60D954BDB890C8129C971B36A",
+                "label": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [{
+                "className": "org.joget.apps.userview.lib.FormMenu",
+                "properties": {
+                    "formId": "SetupSMTP",
+                    "customHeader": "",
+                    "loadDataWithKey": "",
+                    "redirectUrlOnCancel": "h",
+                    "fieldPassoverMethod": "append",
+                    "redirectTargetOnCancel": "top",
+                    "keyName": "",
+                    "customFooter": "",
+                    "label": "<i class=\"icon-cog\"><\/i> Setup Email SMTP",
+                    "paramName": "",
+                    "customId": "smtp",
+                    "messageShowAfterComplete": "",
+                    "showInPopupDialog": "",
+                    "submitButtonLabel": "",
+                    "readonly": "",
+                    "cancelButtonLabel": "",
+                    "id": "9AC2EB8A0B964645B38D2A6A9993F355",
+                    "redirectUrlAfterComplete": "h",
+                    "fieldPassover": "",
+                    "readonlyLabel": ""
+                }
+            }],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-0AC27D1433394FA28FB1C03B50FB98CF",
+                "label": "Setup"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [{
+                "className": "org.joget.apps.userview.lib.Link",
+                "properties": {
+                    "id": "902D0A32F41D46E79D6A888B65713517",
+                    "label": "<i class=\"icon-play\"><\/i> View Running Processes",
+                    "customId": "vrp",
+                    "url": "/jw/web/console/monitor/running",
+                    "target": "blank"
+                }
+            }],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.plugin.enterprise.AdminUserviewPermission",
+                    "properties": {}
+                },
+                "id": "category-6BD55086F5064831BC17B00FF4834067",
+                "label": "New Category"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [{
+                "className": "org.joget.apps.userview.lib.Link",
+                "properties": {
+                    "id": "76B6CB839E414DF4AA401944A6CBC671",
+                    "label": "<i class=\"icon-stop\"><\/i> View Completed Processes",
+                    "customId": "vcp",
+                    "url": "/jw/web/console/monitor/completed",
+                    "target": "blank"
+                }
+            }],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.plugin.enterprise.AdminUserviewPermission",
+                    "properties": {}
+                },
+                "id": "category-9CEB4DD8FA5C4DB88E2A64F7759BFD06",
+                "label": "New Category"
+            }
+        }
+    ],
+    "properties": {
+        "logoutText": "Logout",
+        "welcomeMessage": "#date.EEE, d MMM yyyy#",
+        "name": "Tutorial: Process Deadlines",
+        "description": "",
+        "footerMessage": "Powered by Joget",
+        "id": "h"
+    },
+    "setting": {"properties": {
+        "__": "",
+        "userviewDescription": "",
+        "hideThisUserviewInAppCenter": "",
+        "userview_thumbnail": "",
+        "theme": {
+            "className": "org.joget.plugin.enterprise.UniversalTheme",
+            "properties": {
+                "css": "",
+                "buttonColor": "GREY",
+                "primaryColor": "DARKROYALBLUE",
+                "js": "",
+                "disablePush": "",
+                "removeAssignmentTitle": "",
+                "userMenu": [],
+                "urlsToCache": "",
+                "loginPageTop": "",
+                "userImage": "no",
+                "shortcut": [],
+                "shortcutLinkLabel": "Shortcut",
+                "disableHelpGuide": "",
+                "logo": "",
+                "enableResponsiveSwitch": "true",
+                "buttonTextColor": "WHITE",
+                "fav_icon": "",
+                "horizontal_menu": "",
+                "accentColor": "BLUE",
+                "menuFontColor": "BLACK",
+                "profile": "true",
+                "homeAttractBanner": "",
+                "homeUrl": "",
+                "subheader": "",
+                "subfooter": "",
+                "disablePwa": "",
+                "loginPageBottom": "",
+                "themeScheme": "light",
+                "inbox": "",
+                "fontColor": "WHITE"
+            }
+        },
+        "permission": {
+            "className": "",
+            "properties": {}
+        },
+        "userviewName": "Tutorial: Process Deadlines"
+    }}
+}

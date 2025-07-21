@@ -1,0 +1,38 @@
+<appDefinition>
+   <appId>jtdeadline</appId>
+   <id>jtdeadline</id>
+   <version></version>
+   <name>Tutorial: Process Deadline</name>
+   <packageDefinitionList/>
+   <formDefinitionList/>
+   <userviewDefinitionList/>
+   <datalistDefinitionList/>
+   <builderDefinitionList/>
+   <pluginDefaultPropertiesList>
+      <pluginDefaultProperties>
+         <id>org.joget.apps.app.lib.EmailTool</id>
+         <appId>jtdeadline</appId>
+         <appVersion>1</appVersion>
+         <pluginName>Email Tool</pluginName>
+         <pluginDescription>Sends email message to targeted recipient(s)</pluginDescription>
+         <pluginProperties>{&quot;host&quot;:&quot;input&quot;,&quot;port&quot;:&quot;input&quot;,&quot;security&quot;:&quot;&quot;,&quot;username&quot;:&quot;&quot;,&quot;password&quot;:&quot;%%%%Ieq21i3jOa3mrI3hXXBqow==%%%%&quot;,&quot;from&quot;:&quot;input&quot;,&quot;toSpecific&quot;:&quot;&quot;,&quot;toParticipantId&quot;:&quot;&quot;,&quot;cc&quot;:&quot;&quot;,&quot;bcc&quot;:&quot;&quot;,&quot;subject&quot;:&quot;&quot;,&quot;message&quot;:&quot;&quot;,&quot;isHtml&quot;:&quot;&quot;,&quot;formDefId&quot;:&quot;&quot;,&quot;fields&quot;:[],&quot;files&quot;:[]}</pluginProperties>
+      </pluginDefaultProperties>
+   </pluginDefaultPropertiesList>
+   <environmentVariableList>
+      <environmentVariable>
+         <id>AppName</id>
+         <appId>jtdeadline</appId>
+         <appVersion>1</appVersion>
+         <value>Tutorial: Process Deadlines</value>
+      </environmentVariable>
+      <environmentVariable>
+         <id>SerialNo</id>
+         <appId>jtdeadline</appId>
+         <appVersion>1</appVersion>
+         <value>12</value>
+      </environmentVariable>
+   </environmentVariableList>
+   <messageList/>
+   <resourceList/>
+   <license>iGxAkNELMTJRB7DfshdWuM61u/zy1312wXMd5U0fvRM2Rva5wyZf2g==</license>
+</appDefinition>

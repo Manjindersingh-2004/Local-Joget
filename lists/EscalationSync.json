@@ -1,0 +1,182 @@
+{
+    "useSession": "false",
+    "showPageSizeSelector": "true",
+    "rowActions": [],
+    "columns": [
+        {
+            "hidden": "false",
+            "name": "SerialNo",
+            "width": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_5",
+            "label": "#",
+            "sortable": "true",
+            "exclude_export": ""
+        },
+        {
+            "hidden": "false",
+            "name": "id",
+            "width": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_3",
+            "label": "ID",
+            "sortable": "false",
+            "exclude_export": ""
+        },
+        {
+            "hidden": "false",
+            "name": "ApproverUser1",
+            "width": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "text-align: center;",
+            "id": "column_6",
+            "label": "Activity 1 User",
+            "sortable": "false",
+            "exclude_export": ""
+        },
+        {
+            "hidden": "false",
+            "name": "status1",
+            "width": "",
+            "format": {
+                "className": "org.joget.apps.datalist.lib.DefaultFormatter",
+                "properties": {
+                    "size": "",
+                    "color": "",
+                    "field": "",
+                    "formDefId": "",
+                    "formatting": "b"
+                }
+            },
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "text-align: center;",
+            "id": "column_0",
+            "label": "Activity 1 Status",
+            "sortable": "false",
+            "exclude_export": ""
+        },
+        {
+            "hidden": "false",
+            "name": "ApproverUser2",
+            "width": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "text-align: center;",
+            "id": "column_7",
+            "label": "Activity 2 User",
+            "sortable": "false",
+            "exclude_export": ""
+        },
+        {
+            "hidden": "false",
+            "name": "status2",
+            "width": "",
+            "format": {
+                "className": "org.joget.apps.datalist.lib.DefaultFormatter",
+                "properties": {
+                    "size": "",
+                    "color": "",
+                    "field": "",
+                    "formDefId": "",
+                    "formatting": "b"
+                }
+            },
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "text-align: center;",
+            "id": "column_4",
+            "label": "Activity 2 Status",
+            "sortable": "false",
+            "exclude_export": ""
+        },
+        {
+            "hidden": "false",
+            "name": "deadlineLimit1",
+            "width": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "text-align: center;",
+            "id": "column_8",
+            "label": "Deadline Limit",
+            "sortable": "false",
+            "exclude_export": ""
+        },
+        {
+            "hidden": "false",
+            "name": "dateCreated",
+            "width": "",
+            "format": {
+                "className": "org.joget.plugin.enterprise.DateFormatter",
+                "properties": {
+                    "dataFormat": "yyyy-MM-dd",
+                    "displayFormat": "MMM-d"
+                }
+            },
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "text-align: center;",
+            "id": "column_1",
+            "label": "Created",
+            "sortable": "true",
+            "exclude_export": ""
+        }
+    ],
+    "pageSize": "100",
+    "orderBy": "id",
+    "description": "",
+    "filters": [],
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "buttonPosition": "bottomLeft",
+    "hidePageSize": "true",
+    "checkboxPosition": "left",
+    "name": "List Deadlines",
+    "id": "EscalationSync",
+    "binder": {
+        "className": "org.joget.plugin.enterprise.AdvancedFormRowDataListBinder",
+        "properties": {"formDefId": "EscalationSync"}
+    },
+    "actions": [],
+    "order": "2"
+}

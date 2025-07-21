@@ -1,0 +1,386 @@
+{
+    "elements": [
+        {
+            "elements": [{
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.SelectBox",
+                        "properties": {
+                            "controlField": "",
+                            "readonly": "",
+                            "size": "",
+                            "optionsBinder": {
+                                "className": "org.joget.plugin.enterprise.UserOptionsBinder",
+                                "properties": {
+                                    "optionLabel": "",
+                                    "addEmptyOption": "",
+                                    "useAjax": "",
+                                    "groupId": "",
+                                    "deptId": "",
+                                    "grouping": "",
+                                    "emptyLabel": "",
+                                    "orgId": ""
+                                }
+                            },
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "message": "",
+                                    "type": "",
+                                    "mandatory": "true"
+                                }
+                            },
+                            "multiple": "",
+                            "options": [],
+                            "workflowVariable": "ApproverUser1",
+                            "id": "ApproverUser1",
+                            "label": "Select Activity User 1",
+                            "value": "admin",
+                            "readonlyLabel": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.SelectBox",
+                        "properties": {
+                            "controlField": "",
+                            "readonly": "",
+                            "size": "",
+                            "optionsBinder": {
+                                "className": "org.joget.plugin.enterprise.UserOptionsBinder",
+                                "properties": {
+                                    "optionLabel": "",
+                                    "addEmptyOption": "",
+                                    "useAjax": "",
+                                    "groupId": "",
+                                    "deptId": "",
+                                    "grouping": "",
+                                    "emptyLabel": "",
+                                    "orgId": ""
+                                }
+                            },
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "message": "",
+                                    "type": "",
+                                    "mandatory": "true"
+                                }
+                            },
+                            "multiple": "",
+                            "options": [],
+                            "workflowVariable": "ApproverUser2",
+                            "id": "ApproverUser2",
+                            "label": "Select Activity User 2",
+                            "value": "admin",
+                            "readonlyLabel": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "readonly": "",
+                            "size": "3",
+                            "maxlength": "",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "message": "",
+                                    "type": "numeric",
+                                    "mandatory": "true"
+                                }
+                            },
+                            "workflowVariable": "deadlineLimit1",
+                            "id": "deadlineLimit1",
+                            "label": "For Activity 1 inaction, enter total minutes before escalating to Activity 2",
+                            "value": "1",
+                            "readonlyLabel": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "readonly": "",
+                            "size": "3",
+                            "maxlength": "",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "message": "",
+                                    "type": "numeric",
+                                    "mandatory": "true"
+                                }
+                            },
+                            "workflowVariable": "deadlineLimit2",
+                            "id": "deadlineLimit2",
+                            "label": "If Activity 2 inaction, enter total minutes before ending the whole process using Deadline",
+                            "value": "1",
+                            "readonlyLabel": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.CustomHTML",
+                        "properties": {
+                            "autoPopulate": "",
+                            "id": "field6",
+                            "label": "",
+                            "value": "<span style=\"color:red;font-weight:bold;\">Important:<\/span> Remember to set a value of '<b>30<\/b>' in the Process Deadline Checker Interval value in <a style=\"color:blue;\" href=\"/jw/web/console/setting/general\"><b>System Settings<\/b><\/a>.\n<br/><i class=\"icon-circle-arrow-down\"><\/i> Click the \"Start Process\" button below to test the process deadline.<br/>"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "useDefaultWhenEmpty": "",
+                            "workflowVariable": "status1",
+                            "id": "status1",
+                            "value": "Pending"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "useDefaultWhenEmpty": "",
+                            "workflowVariable": "status2",
+                            "id": "status2",
+                            "value": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.IdGeneratorField",
+                        "properties": {
+                            "hidden": "true",
+                            "format": "??????",
+                            "workflowVariable": "",
+                            "envVariable": "SerialNo",
+                            "id": "SerialNo",
+                            "label": "SerialNo"
+                        }
+                    }
+                ],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "regex": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.BeanShellPermission",
+                    "properties": {"script": "// Show this section if it is NOT Approver view\r\nreturn !\"#assignment.activityName#\".equals(\"Activity 1\") && !\"#assignment.activityName#\".equals(\"Activity 2\");"}
+                },
+                "id": "section1",
+                "label": "Process Deadline with Two Deadlines (Asynchronous)",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.Radio",
+                    "properties": {
+                        "controlField": "",
+                        "readonly": "",
+                        "optionsBinder": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "options": [
+                            {
+                                "label": "Approved",
+                                "grouping": "",
+                                "value": "Approved"
+                            },
+                            {
+                                "label": "Rejected",
+                                "grouping": "",
+                                "value": "Rejected"
+                            }
+                        ],
+                        "workflowVariable": "status2",
+                        "id": "status1",
+                        "label": "Activity1 action",
+                        "value": "",
+                        "readonlyLabel": ""
+                    }
+                }],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "regex": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.BeanShellPermission",
+                    "properties": {"script": "// Show this section if it is Approver 1's task\r\nreturn \"#assignment.activityName#\".equals(\"Activity 1\");"}
+                },
+                "id": "section3",
+                "label": "Activity 1 Action Form",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "readonly": "true",
+                            "size": "",
+                            "maxlength": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "workflowVariable": "",
+                            "id": "status1",
+                            "label": "Activity 1 status",
+                            "value": "",
+                            "readonlyLabel": "true"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.Radio",
+                        "properties": {
+                            "controlField": "",
+                            "readonly": "",
+                            "optionsBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "options": [
+                                {
+                                    "label": "Approved",
+                                    "grouping": "",
+                                    "value": "Approved"
+                                },
+                                {
+                                    "label": "Rejected",
+                                    "grouping": "",
+                                    "value": "Rejected"
+                                }
+                            ],
+                            "workflowVariable": "status2",
+                            "id": "status2",
+                            "label": "Activity 2 action",
+                            "value": "",
+                            "readonlyLabel": ""
+                        }
+                    }
+                ],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "regex": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.BeanShellPermission",
+                    "properties": {"script": "// Show this section if it is Approver 2's task\nreturn \"#assignment.activityName#\".equals(\"Activity 2\");"}
+                },
+                "id": "section2",
+                "label": "Activity 2 Action Form",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.CustomHTML",
+                    "properties": {
+                        "autoPopulate": "",
+                        "id": "field3_1",
+                        "label": "",
+                        "value": "<style>\r\n\tb { color:red;}\r\n<\/style>\r\nProcess Id: <b>#assignment.processId#<\/b><br>\r\nProcess DefId: <b>#assignment.processDefId#<\/b><br/>\r\nProcess Name: <b>#assignment.processName#<\/b><br/>\r\nProcess Version: <b>#assignment.processVersion#<\/b><br/>\r\nProcess Requester: <b>#assignment.processRequesterId#<\/b><br/>\r\nActivity Id: <b>#assignment.activityId#<\/b><br/>\r\nActivity Name: <b>#assignment.activityName#<\/b><br/>\r\nActivity  DefId: <b>#assignment.activityDefId#<\/b><br/>\r\nActivity Assignee: <b>#assignment.assigneeId#<\/b><br/>\r\n<br/>\r\nSerial No: <b>#form.j_deadline.SerialNo#<\/b><br/>\r\nDeadline Limit 1: <b>#variable.deadlineLimit1#<\/b> minutes<br/>\r\nDeadline Limit 2: <b>#variable.deadlineLimit2#<\/b> minutes<br/>\r\n<br/>"
+                    }
+                }],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "regex": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.BeanShellPermission",
+                    "properties": {"script": "// Show this section if it is Approver 1 or 2 task\r\nreturn (\"#assignment.activityName#\".equals(\"Activity 1\") || \"#assignment.activityName#\".equals(\"Activity 2\"));"}
+                },
+                "id": "section1_1",
+                "label": "Process Information Using Hash Variable",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": ""
+            }
+        }
+    ],
+    "className": "org.joget.apps.form.model.Form",
+    "properties": {
+        "noPermissionMessage": "",
+        "loadBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "name": "Process Deadline with Two Deadlines (Asynchronous)",
+        "description": "",
+        "postProcessorRunOn": "both",
+        "permission": {
+            "className": "",
+            "properties": {}
+        },
+        "id": "EscalationAsyncDeadline",
+        "postProcessor": {
+            "className": "",
+            "properties": {}
+        },
+        "storeBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "tableName": "j_deadline"
+    }
+}
