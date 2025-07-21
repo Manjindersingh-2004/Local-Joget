@@ -4,7 +4,14 @@
         "properties": {}
     },
     "rowActions": [],
-    "columns": [],
+    "columns": [{
+        "filterable": true,
+        "hidden": "false",
+        "name": "c_name",
+        "id": "column_0",
+        "label": "c_name",
+        "sortable": "false"
+    }],
     "pageSize": "0",
     "orderBy": "",
     "description": "",
