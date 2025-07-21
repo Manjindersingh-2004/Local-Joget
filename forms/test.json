@@ -1,0 +1,50 @@
+{
+    "elements": [{
+        "elements": [{
+            "elements": [{
+                "className": "org.joget.apps.form.lib.TextField",
+                "properties": {
+                    "encryption": "false",
+                    "readonly": "False",
+                    "style": "",
+                    "label": "Text Field",
+                    "id": "field1",
+                    "readonlyLabel": "False",
+                    "storeNumeric": "False"
+                }
+            }],
+            "className": "org.joget.apps.form.model.Column",
+            "properties": {"width": "100%"}
+        }],
+        "className": "org.joget.apps.form.model.Section",
+        "properties": {
+            "label": "Section",
+            "id": "section1"
+        }
+    }],
+    "className": "org.joget.apps.form.model.Form",
+    "properties": {
+        "noPermissionMessage": "",
+        "loadBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "name": "Test",
+        "description": "",
+        "postProcessorRunOn": "both",
+        "permission": {
+            "className": "",
+            "properties": {}
+        },
+        "id": "test",
+        "postProcessor": {
+            "className": "org.joget.apps.app.lib.BeanShellTool",
+            "properties": {"script": "import org.joget.commons.util.LogUtil;\nimport org.joget.apps.app.service.AppUtil;\n\nimport javax.sql.DataSource;\nimport java.sql.Connection;\nimport java.sql.PreparedStatement;\nimport java.sql.ResultSet;\nimport org.json.JSONObject;\n\n\n\n         Connection con = null;\n        PreparedStatement stmt = null;\n        ResultSet rs = null;\n        JSONObject jobject = new JSONObject();\n\n    try {\n\n        DataSource ds = (DataSource) AppUtil.getApplicationContext().getBean(\"setupDataSource\");\n        con = ds.getConnection();\n\n        String name = request.getParameter(\"mame\");\n        String email = request.getParameter(\"email\");\n        String number = request.getParameter(\"number\");\n\n        String sql = \"SELECT c_name, c_email, c_phone_no  FROM app_fd_insurance_details WHERE c_name = ? AND c_email = ? AND c_phone_no = ?\";\n        stmt = con.prepareStatement(sql);\n        stmt.setString(1, name);\n        stmt.setString(2, email);\n        stmt.setString(3, number);\n\n        rs = stmt.executeQuery();\n        boolean found = false;\n        while (rs.next()) {\n            found = true;\n            String nameTable = rs.getString(\"c_name\");\n            String emailTable = rs.getString(\"c_email\");\n            String phoneTable = rs.getString(\"c_phone_no\");\n            \n            if(name.equals(nameTable)){\n                jobject.put(\"status\", \"error\");\n                jobject.put(\"message\", \"User already exists with this name\");\n            }\n            if(email.equals(emailTable)){\n                jobject.put(\"status\", \"error\");\n                jobject.put(\"message\", \"Email already exists with this name\");\n            }\n            if(phone.equals(phoneTable)){\n                jobject.put(\"status\", \"error\");\n                jobject.put(\"message\", \"Phone already exists with this name\");\n            }\n            \n            \n        }\n\n\n    } catch (Exception e) {\n        LogUtil.error(\"Example\", e, \"Error occurred while processing\");\n    } finally {\n        try {\n            if (rs != null) rs.close();\n            if (stmt != null) stmt.close();\n            if (con != null) con.close();\n        } catch (Exception ex) {\n            LogUtil.info(\"Error closing database resources\", ex.getMessage());\n        }\n    }\n    JSONObject responseBody = new JSONObject();\n\n    responseBody = jobject;\n    response.setContentType(\"application/json\");\n    response.setCharacterEncoding(\"UTF-8\");\n    response.getWriter().write(responseBody.toString());\n    response.getWriter().flush();\n    response.getWriter().close();\n\n\n}\n    "}
+        },
+        "storeBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "tableName": "insurance_details"
+    }
+}

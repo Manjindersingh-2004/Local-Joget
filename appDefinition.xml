@@ -1,0 +1,25 @@
+<appDefinition>
+   <appId>insuranceChatbot</appId>
+   <id>insuranceChatbot</id>
+   <version></version>
+   <name>Insurance Chatbot</name>
+   <packageDefinitionList/>
+   <formDefinitionList/>
+   <userviewDefinitionList/>
+   <datalistDefinitionList/>
+   <builderDefinitionList/>
+   <pluginDefaultPropertiesList/>
+   <environmentVariableList/>
+   <messageList/>
+   <resourceList>
+      <appResource>
+         <id>car.png</id>
+         <appId>insuranceChatbot</appId>
+         <appVersion>1</appVersion>
+         <filesize>5047</filesize>
+         <permissionClass>org.joget.apps.userview.lib.LoggedInUserPermission</permissionClass>
+         <permissionProperties>{&quot;permission&quot;: { &quot;className&quot;: &quot;org.joget.apps.userview.lib.LoggedInUserPermission&quot;, &quot;properties&quot;: {}}}</permissionProperties>
+      </appResource>
+   </resourceList>
+   <license>g39Z2rLbvy7+NqWaavrMobKB6+u2HKDtF8t28WzbKjk8HncS5UZGh2nOtUyieZX9KzUkJ7eHsie4vcJdhfg7Xg==</license>
+</appDefinition>

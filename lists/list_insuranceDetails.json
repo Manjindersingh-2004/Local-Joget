@@ -1,0 +1,61 @@
+{
+    "template": {
+        "className": "",
+        "properties": {}
+    },
+    "considerFilterWhenGetTotal": "",
+    "showPageSizeSelector": "true",
+    "responsiveMode": "",
+    "rowActions": [],
+    "columns": [
+        {
+            "name": "renewal_status",
+            "id": "column_0",
+            "label": "Renewal Status"
+        },
+        {
+            "name": "name",
+            "id": "column_1",
+            "label": "Name"
+        },
+        {
+            "name": "email",
+            "id": "column_2",
+            "label": "Email"
+        },
+        {
+            "name": "phone_no",
+            "id": "column_3",
+            "label": "Phone No."
+        },
+        {
+            "name": "car_number",
+            "id": "column_4",
+            "label": "Car Number"
+        }
+    ],
+    "cardCollapsible": "",
+    "pageSize": "100",
+    "orderBy": "",
+    "description": "",
+    "showDataWhenFilterSet": "",
+    "disableResponsive": "",
+    "checkboxPosition": "left",
+    "cardCollapseByDefault": "",
+    "id": "list_insuranceDetails",
+    "binder": {
+        "className": "org.joget.plugin.enterprise.AdvancedFormRowDataListBinder",
+        "properties": {"formDefId": "insuranceDetails"}
+    },
+    "order": "",
+    "useSession": "",
+    "draggabletable": "",
+    "filters": [],
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "buttonPosition": "bothLeft",
+    "hidePageSize": "",
+    "name": "List - Insurance Details",
+    "rowActionsMode": "",
+    "showhidecolumns": "",
+    "actions": []
+}

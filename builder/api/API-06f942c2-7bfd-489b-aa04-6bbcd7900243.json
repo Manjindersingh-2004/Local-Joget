@@ -1,0 +1,17 @@
+{
+    "elements": [{
+        "className": "org.joget.api.lib.AppFormAPI",
+        "properties": {
+            "formDefId": "insuranceDetails",
+            "ignorePermission": "",
+            "id": "BA07984C-8C7D-47B9-CDD5-40733ED98DD8",
+            "label": "",
+            "ENABLED_PATHS": "post:/"
+        }
+    }],
+    "properties": {
+        "name": "Insurance Details",
+        "description": "",
+        "id": "API-06f942c2-7bfd-489b-aa04-6bbcd7900243"
+    }
+}

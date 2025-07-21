@@ -1,0 +1,26 @@
+{
+    "template": {
+        "className": "",
+        "properties": {}
+    },
+    "rowActions": [],
+    "columns": [],
+    "pageSize": "0",
+    "orderBy": "",
+    "description": "",
+    "filters": [],
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "name": "test",
+    "id": "test",
+    "binder": {
+        "className": "org.joget.plugin.enterprise.JdbcDataListBinder",
+        "properties": {
+            "optimisePaging": "",
+            "jdbcDatasource": "default",
+            "sql": "SELECT c_name, c_email, c_phone_no FROM app_fd_insurance_details WHERE c_car_number = 'TN22BB1122'",
+            "primaryKey": "username"
+        }
+    },
+    "actions": [],
+    "order": ""
+}
